@@ -1,0 +1,59 @@
+#+title: 826notes
+
+* Genesis
+- Tools like ChatGPT are disallowed in this class.
+- Utilizing cygwin is necessary if using a Windows machine.
+
+  #+begin_src C
+#include <stdio.h>
+
+int main() {
+  printf("To C or not to C: that is the issue.");
+  return 0;
+}
+  #+end_src
+
+  #+RESULTS:
+  : To C or not to C: that is the issue.
+
+The above is an example of a C code block.
+In a real programming setting, writing the C code in a different document then compiling using a program like clang or gcc would be necessary.
+Many things have reasons that may no longer make sense, but are still performed due to convention.
+
+* Explaining how a C program works
+- .c is the file extension for a C program. It is a must, especially for Windows operating systems.
+- Compilers are your friends. They turn C source code into machine code while linking it.
+  There are three steps:
+  1. Preprocessing:
+     The preprocessor obeys commands with "#".
+     It will add external libraries a la "#include <stdio.h>", where "#include" is the command and "<stdio.h>" is the external library.
+  2. Compiling:
+     The compiler translates the program/source code into machine code.
+     Machine code is also called "object code."
+  3. Linking:
+     The linker combines the object code to any additional code to yield a complete executable/binary.
+     It is sometimes possible to manually link. This is usually only necessary if there is a library in an inaccessable location.
+- gcc requires what are called arguments.
+  "-o" is the flag to specify a custom output name.
+  Otherwise, it creates a file called "a.exe" or "a.out", depending on your operating system.
+  "gcc example.c -o example" is a way to create an executable called "example".
+
+* IDEs
+- Integrated Development Environment
+  A software package to produce, edit, compile, link and execute programs without leaving the environment.
+- Code::Blocks is not necessary, but is used in this class. VSCode is also used, but primarily in labs.
+  When running a program in Code::Blocks, it will calculate return codes and execution time.
+
+* Looking at the C code
+- "{}", hereafter defined by "brackets" denote the interior of a function. "main" is just the default function, but it can have a different name.
+  "{" = beginning, "}" = ending.
+  What is inside will be ran when the function is called.
+- Three language features:
+  1. Directives
+     Commands intended for the pre-proccessor.
+     "#include <stdio.h>" is a directive.
+     They begin with a "#".
+     They are one line long.
+  2. Functions
+  3. Statements
+- Next features will be defined in next notes.
