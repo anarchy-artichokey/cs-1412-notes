@@ -1,0 +1,64 @@
+#+title: 830notes
+
+* Names for Constants
+Macro Definitions:
+- "#define PI 3.14"
+  The convention for constant names is to make them all caps.
+  #+begin_src C
+    #include <stdio.h>
+    #define PI 3.14f
+
+    int main() {
+
+      int r;
+      scanf("%d", r);
+      float area = PI*r*r;
+      printf("The area of the circle is %f", area);
+
+    }
+
+  #+end_src
+
+  #+RESULTS:
+  : The area of the circle is 3371343616.000000
+
+* Identifiers
+Names of:
+- Variables
+- Macros
+- Functions
+- Other entities
+Identifier names may contain:
+- Letters
+- Digits
+- Underscores
+However, they MUST begin with a letter or underscore.
+
+* C is a Case Sensitive Language
+"job", "joB", "Job", "JOB", "jOB" are all different.
+Each character has a unique encoding, like in ASCII or utf-8.
+Keywords cannot be identifiers.
+- "int" cannot be a variable.
+- nor can "double"
+- or "for"
+- "while", etc.
+
+* Operators
+Artithmetic operators: + - / * %
+- "+" addition
+- "-" subtraction
+- "/" division
+- "*" multiplication
+- "%" modulus or remainder
+Relational operators:
+Logical operators: && || !
+Assignment operators: =
+Increment and Decrement operators:
+
+* Unary and Binary Operators
+Unary operators require only one operand.
+- +
+  "int i = +10;"
+- -
+  "int j = -10;"
+Binary operators require at least two operands.
