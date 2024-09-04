@@ -1,0 +1,53 @@
+#+title: 904notes
+
+* Type Mixing
+Binary arithmetic operators with the exception of "%" allow either integer or floating point operands with mixing allowed.
+Type mixing is legal.
+
+#+begin_src C
+#include <stdio.h>
+
+int main() {
+  int a = 23;
+  float b = 23.0f;
+
+  int c = a + b;
+
+  printf("%d\n", c);
+
+  float d = a + b;
+
+  printf("%f", d);
+
+  return 0;
+}
+#+end_src
+
+#+RESULTS:
+|   46 |
+| 46.0 |
+
+The result has the type of the variable assigned, despite the incorporation of the float.
+The second result has the type of the varaible assigned, in this case a float.
+
+While legal, there is the very real possibility of data loss when converting a float to an int.
+
+* Division and Modulus Operators
+"int a = 2, b = 1;" "float f = b/a;", what is the value of f?
+- The answer is: a float.
+  It is a bit more complicated than that.
+  It casts to a float *AFTER* performing the execution.
+  The answer is "0.0000000".
+
+* The % Operators
+Both operands *MUST* be integers.
+The compiler will throw an error otherwise.
+
+* Operator Precedence
+- (unary) + -
+- * / %
+- (binary) + -
+
+* Operator Associativity
+Binary arithmetic operators are left associative.
+Unary arithmetic operators are right associative.
