@@ -1,0 +1,97 @@
+#+title: 906notes
+
+* Assignment Operator
+One equals sign that does not check for equivalency, but setting a variable to a value; "=".
+1. Simple Assignments:
+   Used for storing a value into a variable.
+2. Compound Assignments:
+   Used for updating a value already stored in a variable.
+   Assignments of this type do type conversion: floating points cast to integers are truncated.
+   Special types are also useful for incorporating a variable in a calculation on the other side of the equals sign.
+   - +=
+   - -=
+   - *=
+   - /=
+   - %=
+
+* Side Effects
+If an operator modifies one of its operands, it is called a side effect.
+
+#+begin_src C
+#include <stdio.h>
+
+int main() {
+
+  int i, j;
+  j = (i = 0); //side effect :3
+  printf("%d", j);
+
+  return 0;
+}
+#+end_src
+
+#+RESULTS:
+: 0
+
+Assignment operator, "=", is an operator, it is not a statement.
+
+#+begin_src C
+#include <stdio.h>
+
+int main() {
+
+  int i, j, k, l;
+
+  i = 100;
+  j = 300
+  k = 1;
+  l = 0;
+
+  i = j = k = l;
+  printf("%d", i);
+
+  return 0;
+}
+#+end_src
+
+#+RESULTS:
+
+It did not like my input.
+
+* Embedded Assignments
+"k = 1 + (i = 1);"
+This is not illegal, but can provide weird results. (See code block above and its /lack/ of output.)
+Newer, higher level, languages remove this option entirely.
+
+* Lvalue
+Locator value, lvalue.
+
+#+begin_src C
+#include <stdio.h>
+
+int main() {
+
+
+  int i;
+  i + 5 = 15; //bad expression on left side
+
+  printf("%d", i);
+
+  return 0;
+}
+#+end_src
+
+#+RESULTS:
+
+An lvalue represents an object stored in a computer's memory.
+There cannot be expressions on the left side of an assignment.
+One type of lvalue is a variable.
+
+* Increment and Decrement Operators
+** Increment Operator
+"int i = 5; i++;"
+Increments a variable by 1, equivalent to "i += 1;" or "i = i + 1;".
+"++i" is called the pre-increment operator.
+- Increments immediately.
+"i++" is called the post-increment operator.
+- Uses the current value before incrementing.
