@@ -1,0 +1,34 @@
+#+title: 909notes
+
+* Precedence
+
+| Name           | Symbol | Associativity |
+| increment      | ++     | left          |
+| decrement      | --     | right         |
+| unary plus     | +      | left          |
+| unary minus    | -      | left          |
+| multiplicative | * / %  | left          |
+| additive       | + -    | left          |
+
+: a = b += c++ - d + --e / -f
+: a = (b +) = ((c++) - d + ((--e) / (-f)))
+The two statements are equivalent, but the second one highlights the precedence.
+
+: d = (a + b) * (b + c)
+According to the rules of C, it cannot be said as to which statement will execute first.
+However, computers can only do one thing at a time.
+
+: c = (b = a + 2) - (a = 1)
+This is undefined according to the C standard.
+It will not show an error message, but the output will be unstable.
+
+* Selection Statement
+
+: i < j, i = 5, j = 10
+The output would be 1 or TRUE.
+This statement is called a logical expression. It determines if something is true or false.
+There is no boolean in C, so booleans are represented by binary integers. (0, 1).
+
+In a case of mixed types, the output type represents the boolean, not the operation.
+
+Precedence of relational operators is lower than that of the aritmetic operators.
