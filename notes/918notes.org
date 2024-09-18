@@ -1,0 +1,28 @@
+#+title: 918notes
+
+* Characters
+: char x = 'a';
+- Internally stored as an integer.
+  As such, it can be cast to an integer with no data loss.
+
+* Switch Statements
+- Case labels do not have to be in order.
+- Default does not have to go at the end of a switch statement.
+  However, this is bad practice.
+- Without "break" statements, program flow continues uninteruppted.
+  Order does definitely matter at this point.
+
+* Iteration Statements
+Three in C:
+1. while() {}
+   - Controlling expression is tested at the beginning of each iteration.
+   - If the controlling expression is false before any loop, it will not execute any code at all.
+   - To make infinite, insert "1" into the controlling expression.
+2. do {} while()
+   - Loop body executes once, then it checks the controlling expression before each loop.
+   - If controlling statement is false, it will execute the loop once.
+   - To make infinite, insert "1" into the controlling expression.
+3. for(;;) {}
+   - Convienent for using a known start and end point.
+   - Uses only increment or decrement operators to change which iteration it is.
+   - To make infinite, leave the controlling expression blank, save for the semicolons.

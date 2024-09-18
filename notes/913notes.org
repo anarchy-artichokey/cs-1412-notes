@@ -1,0 +1,32 @@
+#+title: 913notes
+
+* The if Statement
+
+: if(expression) {statement}
+- A compound statement, does not require a semicolon at the end.
+  Other examples of compound statements:
+  - Function declarations
+  - main
+  - switch cases
+
+: if (i > j) {printf("i is the max.");}
+
+If statements evaluate based on a boolean expression in the parentheses.
+It is possible to make it always true or always false by inputting raw booleans.
+In C, they are 1 (true), and 0 (false).
+
+An else statement is the default of if statements. They evaluate if none of the connected if or else if statements are true.
+
+* Conditional Expressions (Ternary Expression)
+Conditional operator:
+- Choose a value based on an expression.
+  : expression1 ? expression 2 : expression 3
+  - expression 1: boolean expression
+  - expression 2: case true
+  - expression 3: case false
+  These move down left to right based on if it is true or not.
+
+* Booleans
+There are no booleans in C89, but as of C14, there is now a flag that allows for the boolean data type.
+Despite being a "boolean", it is an integer type that is restricted to 1 and 0.
+: _Bool <variable>;

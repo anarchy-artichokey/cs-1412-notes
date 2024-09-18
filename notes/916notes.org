@@ -1,0 +1,8 @@
+#+title: 916notes
+
+* Bool Values in C99
+
+: _Bool
+- Integer type.
+- Defaults every nonzero integer to 1.
+-
